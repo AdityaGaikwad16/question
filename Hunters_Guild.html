@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hunter x Hunter - Character Archive</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Zen+Kurenaido&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Zen Kurenaido', sans-serif;
+      background-color: #f9f9f9;
+      color: #222;
+      transition: background-color 0.6s, color 0.6s;
+    }
+
+    .dark-mode {
+      background-color: #0d0d0d;
+      color: #f0f0f0;
+    }
+
+    header {
+      background: linear-gradient(to right, #222, #444);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      transition: background-color 0.5s, color 0.5s;
+    }
+
+    .dark-mode main {
+      background-color: #1a1a1a;
+      color: #e0e0e0;
+    }
+
+    .character {
+      margin-bottom: 20px;
+      border-left: 4px solid #2196F3;
+      padding-left: 15px;
+    }
+
+    .killua {
+      color: inherit;
+      cursor: pointer;
+      font-weight: inherit;
+      text-decoration: none;
+    }
+
+    .fade-in {
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .button-hidden {
+      display: none;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #444;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .dark-mode .button-hidden {
+      background-color: #2196F3;
+    }
+
+    .data-node {
+      color: #0d0d0d; 
+      font-weight: bold;
+      margin-top: 30px;
+      font-family: monospace;
+    }
+
+    .dark-mode .data-node {
+      color: #00e676;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #aaa;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header class="fade-in">
+    <h1>Hunter x Hunter - Character Archive</h1>
+  </header>
+
+  <main class="fade-in">
+    <section class="character">
+      <h2>Gon Freecss</h2>
+      <p>The ever-optimistic protagonist, Gon seeks to become a Hunter like his father. His raw potential and loyalty define his journey.</p>
+    </section>
+
+    <section class="character">
+      <h2>Killua Zoldyck</h2>
+      <p>
+        Born into a family of assassins, <span class="killua" onclick="unlockLore()">Killua</span> broke free to carve his own destiny.
+        His mastery of Nen and strategic mind make him a fan-favorite.
+        "Killua was super intelligent and a fan of Fibonacci series, literature and nature"
+      </p>
+    </section>
+
+    <section class="character">
+      <h2>Hisoka</h2>
+      <p>A mysterious and dangerous individual, Hisoka thrives on chaos and power. His interest in strong opponents makes him unpredictable.</p>
+    </section>
+
+    <button class="button-hidden" id="loreBtn" onclick="reveal()">Unlock More Lore</button>
+    <div id="info-payload"></div>
+
+    
+    <p style="margin-top: 40px; color: gray;">Things are easy to search in daylight right ?</code>? 🤔</p>
+  </main>
+
+  <footer>© 2025 Hunter Database | Made by a fan</footer>
+
+  <script>
+    let clicked = false;
+
+    function unlockLore() {
+      if (clicked) return;
+      document.body.classList.add("dark-mode");
+      document.getElementById("loreBtn").style.display = "inline-block";
+      clicked = true;
+    }
+
+    function reveal() {
+      // Deliberately misleading logic
+      const b = "sij"; 
+      const c = "ury";
+      const d = "zr";
+      const e = "z";
+
+      const euu = b + c + d + e;
+
+      const secretBlock = document.createElement("div");
+      secretBlock.className = "data-node";
+      secretBlock.textContent = euu;
+
+      document.getElementById("info-payload").appendChild(secretBlock);
+      document.getElementById("loreBtn").disabled = true;
+    }
+
+    
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.onkeydown = function(e) {
+      if (
+        e.key === "F12" ||
+        (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key.toUpperCase())) ||
+        (e.ctrlKey && e.key === "u")
+      ) {
+        return false;
+      }
+    };
+  </script>
+</body>
+</html>
+
